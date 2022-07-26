@@ -37,12 +37,11 @@ export class AppComponent implements AfterViewInit {
     return Object.keys(stylesMap).reduce((acc, key) => {
       const elementStyles = stylesMap[key];
 
-      return this.interpolateText(`${acc}
-      .${key} {
-        ${Object.keys(elementStyles)
+      return this.interpolateText(
+        `${acc}.${key} {${Object.keys(elementStyles)
           .map((styleKey) => `${styleKey}: ${elementStyles[styleKey]};`)
-          .join('\n')}
-      }`);
+          .join(' ')}}`.trim()
+      );
     }, '');
   }
 
