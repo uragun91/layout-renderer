@@ -17,9 +17,10 @@ export const baseLayoutExample: ILayout = {
           id: 'h312c2e178',
           type: 'text',
           value: 'Some text',
+          when: 'LEN()',
         },
         {
-          id: 'h312c2e178',
+          id: 'h312c2e1asdnkn',
           type: 'text',
           value: 'Another text',
         },
@@ -29,7 +30,7 @@ export const baseLayoutExample: ILayout = {
           value: 'Hello Title',
           style: {
             'background-color': 'green',
-            margin: 0,
+            margin: '20px 0',
             'text-align': 'center',
           },
         },
@@ -40,6 +41,7 @@ export const baseLayoutExample: ILayout = {
             'background-color': 'blue',
             display: 'flex',
             'justify-content': 'space-between',
+            margin: '20px 0',
           },
           children: [
             {

@@ -1,0 +1,70 @@
+<ng-template #template>
+  <ng-container *ngFor="let element of elements">
+
+    <span *ngIf="element.type === 'text'">
+      {{ element.value }}
+    </span>
+
+    <button
+      [ngClass]="element.id"
+      *ngIf="element.type === 'button'"
+    >
+      <ng-container *ngIf="element.value !== undefined && element.value !== null">
+        {{ element.value }}
+      </ng-container>
+
+      <app-elements
+        *ngIf="element.children?.length"
+        [elements]="element.children"
+      ></app-elements>
+    </button>
+
+    <div
+      [ngClass]="element.id"
+      class="container"
+      cdkDropList
+      [cdkDropListDisabled]="!isRoot"
+      cdkDrag
+      [cdkDragDisabled]="isRoot"
+      *ngIf="element.type === 'container'"
+    >
+      <ng-container *ngIf="element.value !== undefined && element.value !== null">
+        {{ element.value }}
+      </ng-container>
+
+      <app-elements
+        *ngIf="element.children?.length"
+        [elements]="element.children"
+      ></app-elements>
+    </div>
+
+    <p
+      [ngClass]="element.id"
+      *ngIf="element.type === 'p'"
+    >
+      <ng-container *ngIf="element.value !== undefined && element.value !== null">
+        {{ element.value }}
+      </ng-container>
+
+      <app-elements
+        *ngIf="element.children?.length"
+        [elements]="element.children"
+      ></app-elements>
+    </p>
+
+    <h1
+      [ngClass]="element.id"
+      cdkDrag
+      *ngIf="element.type === 'h1'"
+    >
+      <ng-container *ngIf="element.value !== undefined && element.value !== null">
+        {{ element.value }}
+      </ng-container>
+
+      <app-elements
+        *ngIf="element.children?.length"
+        [elements]="element.children"
+      ></app-elements>
+    </h1>
+  </ng-container>
+</ng-template>

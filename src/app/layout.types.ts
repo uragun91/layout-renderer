@@ -7,7 +7,8 @@ export interface IElement {
   style?: ElementStyle;
   children?: IElement[];
   when?: string;
-  whenStyle?: {
+  params?: any;
+  styleWhen?: {
     when: string;
     style: ElementStyle;
   }[];

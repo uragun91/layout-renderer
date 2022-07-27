@@ -1,6 +1,4 @@
-<div
-  #stylesHolder
-  class="styles-holder"
-></div>
+<button [routerLink]="['view']">View</button>
+<button [routerLink]="['edit']">Edit</button>
 
-<app-element [children]="layout.children"></app-element>
+<router-outlet></router-outlet>

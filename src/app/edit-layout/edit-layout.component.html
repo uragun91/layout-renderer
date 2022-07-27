@@ -1,0 +1,15 @@
+<div
+  #stylesHolder
+  class="styles-holder"
+></div>
+
+<div class="edit-layout">
+  <div class="edit-layout__stage">
+    <app-elements
+      [elements]="layout.children"
+      [isRoot]="true"
+    ></app-elements>
+  </div>
+  <div class="edit-layout__divider"></div>
+  <div class="edit-layout__editor"></div>
+</div>
