@@ -1,4 +1,31 @@
-export const baseLayoutExample = {
+type ElementStyle = Record<string, string | number>;
+
+interface IElement {
+  id: string;
+  type: string;
+  value?: string | number;
+  style?: ElementStyle;
+  children?: IElement[];
+  when?: string;
+  whenStyle?: {
+    when: string;
+    style: ElementStyle;
+  }[];
+  forLoop?: string;
+}
+
+interface ILayout {
+  params: any;
+  children?: IElement[];
+}
+
+const builtInFunctions = {
+  getForLoopCurrentIndex: 'GET_FOR_LOOP_CURRENT_ELEMENT_INDEX',
+  getForLoopCurrentElement: 'GET_FOR_LOOP_CURRENT_ELEMENT',
+  len: 'LEN', // If you pass string it will return the length of string, if you pass array it will return the array length
+};
+
+export const baseLayoutExample: ILayout = {
   params: {},
   children: [
     {
