@@ -1,23 +1,4 @@
-type ElementStyle = Record<string, string | number>;
-
-interface IElement {
-  id: string;
-  type: string;
-  value?: string | number;
-  style?: ElementStyle;
-  children?: IElement[];
-  when?: string;
-  whenStyle?: {
-    when: string;
-    style: ElementStyle;
-  }[];
-  forLoop?: string;
-}
-
-interface ILayout {
-  params: any;
-  children?: IElement[];
-}
+import { ILayout } from './layout.types';
 
 const builtInFunctions = {
   getForLoopCurrentIndex: 'GET_FOR_LOOP_CURRENT_ELEMENT_INDEX',

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IElement } from '../layout.types';
 
 @Component({
   selector: 'app-element',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./element.component.scss'],
 })
 export class ElementComponent implements OnInit {
-  @Input() children;
+  @Input() children: IElement[];
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 }
